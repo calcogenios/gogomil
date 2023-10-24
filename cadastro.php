@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_startup_errors', 1);
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 if(isset($_POST['submit']))
 {
     //print_r('Nome:  ' . $_POST['nome']);
@@ -15,7 +20,7 @@ if(isset($_POST['submit']))
     $senha = $_POST['senha'];
     $role = $_POST['role'];
 
-    $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, senha, role) 
+    $result = mysqli_query($conexao, "INSERT INTO new_table(nome, email, senha, role) 
     VALUES ('$nome', '$email', '$senha', '$role')");
   
 }
@@ -96,7 +101,7 @@ position: relative;
     </style>
 </head>
 <body>
-    <a href="estudavagao">Voltar</a>
+    <a href="index.php">Voltar</a>
     <div class="box">
         <form action="cadastro.php" method="POST">
             <fieldset>
@@ -118,7 +123,7 @@ position: relative;
                 </div>
                 <br><br>
                 <input type="radio" id="professor" name="role" value="professor" required>
-                <label for="professor">Professor</label>
+                <label for="professor">Professor e Aluno-Tutor</label>
                 <input type="radio" id="aluno" name="role" value="aluno" required>
                 <label for="aluno">Aluno</label>
                 <br> <br>

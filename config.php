@@ -1,18 +1,24 @@
 <?php
+ini_set('display_startup_errors', 1);
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 $dbHost = 'localhost';
 $dbUsername ='root';
-$dbPassword ='';
-$dbName = 'danidani';
+$dbPassword ='707594Mic';
+$dbName = 'danidani606';
 
-$conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+$conexao =  mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
+
+
+
 
 // if($conexao->connect_errno)
 //{
-//    echo "Erro";
-// }
+  //  echo "Erro";
+ //}
 //else
 //{
-//    echo "deu certo";
+  //  echo "deu certo";
 //}
 
 ?>

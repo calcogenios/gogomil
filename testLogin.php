@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 session_start();
 //print_r($_REQUEST);
 if(isset($_POST['submit']) && !empty($_POST['nome']) && !empty($_POST['senha']))
@@ -11,7 +13,7 @@ $senha = $_POST['senha'];
 //print_r('<br>');
 //print_r('Senha:  '. $senha);
 
-$sql = "SELECT * FROM usuarios WHERE nome = '$nome' and senha = '$senha'";
+$sql = "SELECT * FROM new_table WHERE nome = '$nome' and senha = '$senha'";
 $result = $conexao->query($sql);
 
 //print_r($sql);
@@ -20,7 +22,7 @@ if(mysqli_num_rows($result) < 1)
 {
     unset ($_SESSION['nome']);
     unset ($_SESSION['senha']);
-    header('Location: estudavagao.php');
+    header('Location: index.php');
 }
 else{
     $_SESSION['nome'] = $nome;
@@ -31,7 +33,7 @@ else{
 
 else {
 
-header('Location: estudavagao.php');
+header('Location: index.php');
 }
 
 ?>
